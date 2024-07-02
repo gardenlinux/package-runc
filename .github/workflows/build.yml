@@ -8,3 +8,4 @@ jobs:
     uses: gardenlinux/package-build/.github/workflows/build.yml@main
     with:
       release: ${{ github.ref == 'refs/heads/main' }}
+      build_dep: gardenlinux/package-golang 1.22.4-1gardenlinux0+bp1443
