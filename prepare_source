@@ -1,2 +1,2 @@
 apt_src runc
-version_suffix=gardenlinux0+go1.22.4bp1443
+version_suffix=gl0+bp1443
