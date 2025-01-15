@@ -10,4 +10,4 @@ jobs:
       release: ${{ github.ref == 'refs/heads/main' }}
       build_dep: |
         gardenlinux/package-golang 1.22.4-1gardenlinux0+bp1443
-        gardenlinux/package-golang-github-checkpoint-restore-go-criu.git 7.2.0+ds1-2gl0
+        gardenlinux/package-golang-github-checkpoint-restore-go-criu-dev 7.2.0+ds1-2gl0
