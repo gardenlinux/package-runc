@@ -1,2 +1,6 @@
-apt_src runc
-version_suffix=gl0+bp1443
+pkg=runc
+version_orig=1.1.15
+version="$version_orig+ds1-1"
+git_src -b "debian/$version" "https://salsa.debian.org/go-team/packages/runc.git"
+
+version_suffix=gl0~bp1443
