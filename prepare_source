@@ -1,9 +1,8 @@
 version_orig="1.3.0"
 version="1.3.0-1"
-debian_version="${version_orig}${version_suffix}"
 message="New upstream version ${version_orig}"
 
-SALSA_REPO_COMMIT="4fe73a4a8390da812ced05ccbb42f960035d91c2"
+SALSA_REPO_COMMIT="4fe73a4a8390da812ced05ccbb42f960035d91c2" # debian/1.1.15+ds1-1
 
 git_src_commit v${version_orig} https://github.com/opencontainers/runc.git
 
