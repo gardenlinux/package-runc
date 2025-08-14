@@ -20,4 +20,3 @@ popd
 cp -v debian/* $dir/src/debian/
 
 import_upstream_patches
-apply_patches
