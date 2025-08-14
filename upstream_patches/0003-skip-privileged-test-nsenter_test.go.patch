@@ -1,0 +1,18 @@
+From: Shengjing Zhu <zhsj@debian.org>
+Date: Sat, 23 Jan 2021 22:25:59 +0800
+Subject: skip privileged test: nsenter_test.go
+
+---
+ libcontainer/nsenter/nsenter_test.go | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/libcontainer/nsenter/nsenter_test.go b/libcontainer/nsenter/nsenter_test.go
+index 0cbf0aa..44556b3 100644
+--- a/libcontainer/nsenter/nsenter_test.go
++++ b/libcontainer/nsenter/nsenter_test.go
+@@ -1,3 +1,5 @@
++// +build ignore
++
+ package nsenter
+ 
+ import (
