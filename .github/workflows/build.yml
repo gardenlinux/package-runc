@@ -17,3 +17,4 @@ jobs:
         gardenlinux/bp-package-golang-golang-x-sys-dev 0.22.0-1gl1+bp1592
         gardenlinux/bp-package-golang-golang-x-term-dev 0.22.0-1gl1+bp1592
         gardenlinux/bp-package-golang-golang-x-text-dev 0.16.0-1gl1+bp1592
+        gardenlinux/package-golang-github-checkpoint-restore-go-criu-dev 7.2.0+ds1-2gl0
