@@ -19,4 +19,4 @@ popd
 cp -v debian/* $dir/src/debian/
 
 import_upstream_patches
-version_suffix=gl0
+version_suffix=gl0~test
