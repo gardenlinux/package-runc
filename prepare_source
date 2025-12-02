@@ -1,21 +1,24 @@
-version_orig="1.3.3"
+version_orig="1.3.4"
 version="$version_orig-1"
 message="New upstream version ${version_orig}"
 
-SALSA_REPO_COMMIT="4fe73a4a8390da812ced05ccbb42f960035d91c2" # debian/1.1.15+ds1-1
+SALSA_REPO_COMMIT="937efd87a20dea89c728e468fccacdcf3dcfb5eb" # debian/1.3.3+ds1-1
 
 git_src_commit v${version_orig} https://github.com/opencontainers/runc.git
 
 runc_salsa=$(mktemp -d)
 git clone --depth 1 https://salsa.debian.org/go-team/packages/runc $runc_salsa
+
+patch -d $runc_salsa -p0 < debian/control.patch
+patch -d $runc_salsa -p0 < debian/rules.patch
+
 pushd $runc_salsa
 git sparse-checkout set debian
 git fetch origin $SALSA_REPO_COMMIT
 git checkout $SALSA_REPO_COMMIT
-rm -rf $runc_salsa/debian/patches
 cp -r $runc_salsa/debian $dir/src/
+rm $dir/src/debian/patches/0004-Compile-against-go-criu-v7.patch
+rm $dir/src/debian/patches/0005-Update-loongarch64-support.patch
+rm $dir/src/debian/patches/0008-libct-use-manager.AddPid-to-add-exec-to-cgroup.patch
+sed '/0004-Compile-against-go-criu-v7.patch/d;/0005-Update-loongarch64-support.patch/d;/0008-libct-use-manager.AddPid-to-add-exec-to-cgroup.patch/d' -i $dir/src/debian/patches/series
 popd
-
-cp -v debian/* $dir/src/debian/
-
-import_upstream_patches
