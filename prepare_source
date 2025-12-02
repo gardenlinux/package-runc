@@ -22,3 +22,4 @@ rm $dir/src/debian/patches/0005-Update-loongarch64-support.patch
 rm $dir/src/debian/patches/0008-libct-use-manager.AddPid-to-add-exec-to-cgroup.patch
 sed '/0004-Compile-against-go-criu-v7.patch/d;/0005-Update-loongarch64-support.patch/d;/0008-libct-use-manager.AddPid-to-add-exec-to-cgroup.patch/d' -i $dir/src/debian/patches/series
 popd
+version_suffix=gl0
