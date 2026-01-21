@@ -1,2 +1,3 @@
+0001-update-go-version.patch
 0003-skip-privileged-test-nsenter_test.go.patch
 0005-skip-integration-when-no-dev-kmsg.patch
