@@ -12,10 +12,7 @@ pushd $runc_salsa
 git sparse-checkout set debian
 git fetch origin $SALSA_REPO_COMMIT
 git checkout $SALSA_REPO_COMMIT
-rm -rf $runc_salsa/debian/patches
 cp -r $runc_salsa/debian $dir/src/
 popd
 
-cp -v debian/* $dir/src/debian/
-
-import_upstream_patches
+apply_patches

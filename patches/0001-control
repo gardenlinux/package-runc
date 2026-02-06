@@ -1,0 +1,85 @@
+--- a/debian/control	2026-02-05 17:27:09.728138824 +0100
++++ b/debian/control	2026-02-05 17:27:24.504565390 +0100
+@@ -1,48 +1,33 @@
+ Source: runc
+ Section: admin
+ Priority: optional
+-Standards-Version: 4.7.2
++Standards-Version: 4.6.2
+ Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+ Uploaders: Alexandre Viau <aviau@debian.org>,
+            Dmitry Smirnov <onlyjob@debian.org>,
+-           Reinhard Tartler <siretart@tauware.de>
++           Tim Potter <tpot@hpe.com>,
+ Build-Depends: debhelper-compat (= 13),
+                dh-golang,
+                go-md2man,
+                golang-any,
+                golang-dbus-dev,
+-               golang-github-checkpoint-restore-go-criu-dev (>= 7),
+-               golang-github-cilium-ebpf-dev (>= 0.17~),
+-               golang-github-containerd-console-dev (>= 1.0.5),
+-               golang-github-coreos-go-systemd-dev (>= 22.3.2~),
+-               golang-github-cyphar-filepath-securejoin-dev (>= 0.5.0),
+-               golang-github-docker-go-units-dev (>= 0.4.0~),
+-               golang-github-moby-sys-dev (>= 0.0~git20201113.5a29239~),
+-               golang-github-mrunalp-fileutils-dev (>= 0.5.1~),
+-               golang-github-opencontainers-cgroups-dev (>> 0.0.5),
+-               golang-github-opencontainers-selinux-dev (>= 1.8.0~),
+-               golang-github-opencontainers-specs-dev (>= 1.0.2.66~),
+                golang-github-seccomp-libseccomp-golang-dev (>= 0.10.0~),
+-               golang-github-sirupsen-logrus-dev,
+-               golang-github-urfave-cli-dev (>= 1.22.9~),
+-               golang-github-vishvananda-netlink-dev,
+                golang-gocapability-dev (>= 0.0+git20200815~),
+                golang-golang-x-net-dev,
+                golang-google-protobuf-dev,
+                pkgconf,
+-Build-Conflicts: golang-github-opencontainers-specs-dev (>> 1.3),
+-                 golang-github-opencontainers-cgroups-dev (>> 0.6)
+ Homepage: https://github.com/opencontainers/runc
+ Vcs-Git: https://salsa.debian.org/go-team/packages/runc.git
+ Vcs-Browser: https://salsa.debian.org/go-team/packages/runc
+ XS-Go-Import-Path: github.com/opencontainers/runc
++Rules-Requires-Root: no
+ Testsuite: autopkgtest-pkg-go
+
+ Package: runc
+ Architecture: any
+ Depends: ${misc:Depends},
+          ${shlibs:Depends},
+-Static-Built-Using: ${misc:Static-Built-Using}
++Built-Using: ${misc:Built-Using},
+ Recommends: criu,
+             ${misc:Recommends},
+ Description: Open Container Project - runtime
+@@ -54,28 +39,12 @@
+ Architecture: all
+ Section: golang
+ Depends: golang-dbus-dev,
+-         golang-github-checkpoint-restore-go-criu-dev (>= 6),
+-         golang-github-cilium-ebpf-dev (>= 0.17~),
+-         golang-github-containerd-console-dev (>= 1.0.5),
+-         golang-github-coreos-go-systemd-dev (>= 22.3.2~),
+-         golang-github-cyphar-filepath-securejoin-dev (>= 0.5.0),
+-         golang-github-docker-go-units-dev (>= 0.4.0~),
+-         golang-github-moby-sys-dev (>= 0.0~git20201113.5a29239~),
+-         golang-github-mrunalp-fileutils-dev (>= 0.5.1~),
+-         golang-github-opencontainers-cgroups-dev (>> 0.0.5),
+-         golang-github-opencontainers-selinux-dev (>= 1.8.0~),
+-         golang-github-opencontainers-specs-dev (>= 1.0.2.66~),
+          golang-github-seccomp-libseccomp-golang-dev (>= 0.10.0~),
+-         golang-github-sirupsen-logrus-dev,
+-         golang-github-urfave-cli-dev (>= 1.22.9~),
+-         golang-github-vishvananda-netlink-dev,
+          golang-gocapability-dev (>= 0.0+git20200815~),
+          golang-golang-x-net-dev,
+          golang-google-protobuf-dev,
+          ${misc:Depends},
+-Breaks: golang-github-containers-common-dev (<< 0.64),
+-        golang-github-containers-buildah-dev (<< 1.41),
+-        podman (<< 5.6.1)
++Breaks: podman (<< 2.0.4+dfsg2-5~),
+ Description: Open Container Project - development files
+  "runc" is a command line client for running applications packaged according
+  to the Open Container Format (OCF) and is a compliant implementation of
