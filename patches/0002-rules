@@ -1,26 +1,12 @@
 --- a/debian/rules	2026-02-06 08:04:36.627804563 +0100
 +++ b/debian/rules	2025-08-14 13:09:54.000000000 +0200
-@@ -3,7 +3,6 @@
+@@ -3,7 +3,8 @@
  include /usr/share/dpkg/pkg-info.mk
 
  export DH_GOLANG_EXCLUDES      := libcontainer/integration contrib/cmd
 -export DH_GOLANG_INSTALL_EXTRA := VERSION
++export DH_GOLANG_INSTALL_EXTRA := vendor/google.golang.org/protobuf/internal/editiondefaults/editions_defaults.binpb \
++	VERSION
 
  TAGS    := seccomp urfave_cli_no_docs
  LDFLAGS := -X main.version=$(DEB_VERSION_UPSTREAM) -X main.gitCommit=$(DEB_VERSION)
-@@ -14,6 +13,15 @@
- execute_after_dh_auto_build:
- 	cd man && ./md2man-all.sh
-
-+override_dh_auto_configure:
-+	# needed by src/github.com/opencontainers/runc/vendor/google.golang.org/protobuf/internal/editiondefaults/defaults.go
-+	mkdir -p _build/src/github.com/opencontainers/runc/vendor/google.golang.org/protobuf/internal/editiondefaults
-+	cp vendor/google.golang.org/protobuf/internal/editiondefaults/editions_defaults.binpb _build/src/github.com/opencontainers/runc/vendor/google.golang.org/protobuf/internal/editiondefaults/
-+	# needed by src/github.com/opencontainers/runc/main.go
-+	mkdir -p _build/src/github.com/opencontainers/runc
-+	cp VERSION _build/src/github.com/opencontainers/runc/
-+	dh_auto_configure -O--buildsystem=golang -O--builddirectory=_build
-+
- override_dh_auto_build:
- 	dh_auto_build -- -tags "$(TAGS)" -ldflags "$(LDFLAGS)"
-
