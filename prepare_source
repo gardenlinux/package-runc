@@ -1,5 +1,6 @@
 version_orig="1.4.0"
 version="1.4.0-1"
+version_suffix=gl1
 message="New upstream version ${version_orig}"
 
 SALSA_REPO_COMMIT="937efd87a20dea89c728e468fccacdcf3dcfb5eb" # latest on 05.02.2026
