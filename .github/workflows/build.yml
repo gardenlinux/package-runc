@@ -9,4 +9,4 @@ jobs:
     with:
       release: ${{ github.ref == 'refs/heads/main' }}
       build_dep: |
-        gardenlinux/package-golang 1.26.2-1gl0
+        gardenlinux/package-golang 1.26.2-1gl0+bp2150

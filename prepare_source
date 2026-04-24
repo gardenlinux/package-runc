@@ -1,6 +1,6 @@
 version_orig="1.4.2"
 version="1.4.2-1"
-version_suffix=gl1~bp2150
+version_suffix=gl2~bp2150
 
 message="New upstream version ${version_orig}"
 
