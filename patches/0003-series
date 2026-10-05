@@ -1,0 +1,11 @@
+--- a/debian/patches/series	2026-02-05 17:26:32.719069010 +0100
++++ b/debian/patches/series	2026-02-06 08:30:35.011148445 +0100
+@@ -1,8 +1,4 @@
+ 0001-skip-privileged-test-factory_linux_test.go.patch
+ 0002-skip-privileged-test-nsenter_test.go.patch
+ 0003-skip-integration-when-no-dev-kmsg.patch
+-0004-Compile-against-go-criu-v7.patch
+-0005-Update-loongarch64-support.patch
+-0006-Fix-ftbfs-on-mips64el-in-remap-rootfs.go.patch
+ 0007-Unbreak-when-running-in-incus.patch
+-0008-libct-use-manager.AddPid-to-add-exec-to-cgroup.patch
