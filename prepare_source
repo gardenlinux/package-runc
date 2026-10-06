@@ -4,15 +4,17 @@ message="New upstream version ${version_orig}"
 
 SALSA_REPO_COMMIT="f0805cf43016c099e5651801c83633b3ac5a777c" # latest on 2026-03-29
 
-git_src_commit v${version_orig} https://github.com/opencontainers/runc.git
+git_src_commit "v${version_orig}" "https://github.com/opencontainers/runc.git"
 
 runc_salsa=$(mktemp -d)
-git clone --depth 1 https://salsa.debian.org/go-team/packages/runc $runc_salsa
-pushd $runc_salsa
+git clone --depth 1 "https://salsa.debian.org/go-team/packages/runc" "$runc_salsa"
+pushd "$runc_salsa"
 git sparse-checkout set debian
-git fetch origin $SALSA_REPO_COMMIT
-git checkout $SALSA_REPO_COMMIT
-cp -r $runc_salsa/debian $dir/src/
+git fetch origin "$SALSA_REPO_COMMIT"
+git checkout "$SALSA_REPO_COMMIT"
+cp -r "$runc_salsa/debian" "$dir/src/"
 popd
 
 apply_patches
+
+add_sbom "$dir/src" "" "runc" ""
