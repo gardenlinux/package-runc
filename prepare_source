@@ -1,10 +1,9 @@
-version_orig="1.4.3"
-version="1.4.3-1"
-version_suffix=gl9~bp2150
+version_orig="1.4.4"
+version="1.4.4-1"
 
-message="New upstream version ${version_orig}"
+message="New orig version ${version_orig}"
 
-SALSA_REPO_COMMIT="f0805cf43016c099e5651801c83633b3ac5a777c" # latest on 2026-03-29
+SALSA_REPO_COMMIT="5f50c6022ed6247b943be70052c5da50999330d1" # debian/1.4.3+ds1-1
 
 git_src_commit v${version_orig} https://github.com/opencontainers/runc.git
 
