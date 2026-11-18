@@ -22,7 +22,7 @@
                 golang-gocapability-dev (>= 0.0+git20200815~),
                 golang-golang-x-net-dev,
                 golang-google-protobuf-dev,
-@@ -54,28 +38,12 @@
+@@ -51,28 +37,12 @@
  Architecture: all
  Section: golang
  Depends: golang-dbus-dev,
