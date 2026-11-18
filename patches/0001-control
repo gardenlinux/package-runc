@@ -1,6 +1,9 @@
 --- a/debian/control
 +++ b/debian/control
-@@ -10,21 +10,7 @@
+@@ -8,23 +8,9 @@
+ Build-Depends: debhelper-compat (= 13),
+-               dh-golang (>> 1.66~),
++               dh-golang,
                 go-md2man,
                 golang-any,
                 golang-dbus-dev,
