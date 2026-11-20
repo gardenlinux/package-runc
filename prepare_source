@@ -18,3 +18,5 @@ cp -r "$runc_salsa/debian" "$dir/src/"
 popd
 
 apply_patches
+
+add_sbom "$dir/src" "" "runc" ""
