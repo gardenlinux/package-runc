@@ -6,15 +6,15 @@ message="New orig version ${version_orig}"
 
 SALSA_REPO_COMMIT="5f50c6022ed6247b943be70052c5da50999330d1" # debian/1.4.3+ds1-1
 
-git_src_commit v${version_orig} https://github.com/opencontainers/runc.git
+git_src_commit "v${version_orig}" "https://github.com/opencontainers/runc.git"
 
 runc_salsa=$(mktemp -d)
-git clone --depth 1 https://salsa.debian.org/go-team/packages/runc $runc_salsa
-pushd $runc_salsa
+git clone --depth 1 "https://salsa.debian.org/go-team/packages/runc" "$runc_salsa"
+pushd "$runc_salsa"
 git sparse-checkout set debian
-git fetch origin $SALSA_REPO_COMMIT
-git checkout $SALSA_REPO_COMMIT
-cp -r $runc_salsa/debian $dir/src/
+git fetch origin "$SALSA_REPO_COMMIT"
+git checkout "$SALSA_REPO_COMMIT"
+cp -r "$runc_salsa/debian" "$dir/src/"
 popd
 
 apply_patches
