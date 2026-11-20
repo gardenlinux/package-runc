@@ -1,6 +1,6 @@
 version_orig="1.4.4"
 version="1.4.4-1"
-version_suffix="gl1"
+version_suffix="gl2"
 
 message="New orig version ${version_orig}"
 
