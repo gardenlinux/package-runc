@@ -18,3 +18,4 @@ popd
 apply_patches
 
 add_sbom "$dir/src" "" "runc" ""
+version_suffix=gl0
